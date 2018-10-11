@@ -1,4 +1,4 @@
-package com.jiahaoliuliu.todolist.model;
+package com.jiahaoliuliu.todolist.data;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
