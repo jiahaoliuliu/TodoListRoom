@@ -16,6 +16,7 @@ public class NoteRepository {
     public NoteRepository(Application application) {
         NoteDatabase noteDatabase = NoteDatabase.getInstance(application);
         noteDao = noteDatabase.noteDao();
+        allNotes = noteDao.getAllNotes();
     }
 
     public void insert(Note note) {
