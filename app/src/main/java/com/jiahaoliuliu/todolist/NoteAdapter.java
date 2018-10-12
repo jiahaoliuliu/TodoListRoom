@@ -16,11 +16,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
 
     private List<Note> notes = new ArrayList<>();
 
-    public void setNotes(List<Note> notes) {
-        this.notes = notes;
-        notifyDataSetChanged();
-    }
-
     @NonNull
     @Override
     public NoteHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
@@ -35,6 +30,15 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
         noteHolder.textViewTitle.setText(currentNote.getTitle());
         noteHolder.textViewDescription.setText(currentNote.getDescription());
         noteHolder.textViewPriority.setText(String.valueOf(currentNote.getPriority()));
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
+        notifyDataSetChanged();
+    }
+
+    public Note getNoteAt(int position) {
+        return notes.get(position);
     }
 
     @Override
